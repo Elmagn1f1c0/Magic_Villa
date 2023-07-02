@@ -92,8 +92,11 @@ C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\AutoM
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Humanizer.dll
+C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\hp\Desktop\MagicVilla - Copy\MagicVilla_VillaAPI\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll

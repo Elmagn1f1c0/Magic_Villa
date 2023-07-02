@@ -22,6 +22,31 @@ namespace MagicVillaVillaAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MagicVilla_VillaAPI.Models.LocalUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LocalUsers");
+                });
+
             modelBuilder.Entity("MagicVilla_VillaAPI.Models.Villa", b =>
                 {
                     b.Property<int>("Id")
@@ -67,7 +92,7 @@ namespace MagicVillaVillaAPI.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 6, 14, 15, 52, 36, 641, DateTimeKind.Local).AddTicks(618),
+                            CreatedDate = new DateTime(2023, 6, 21, 14, 45, 23, 671, DateTimeKind.Local).AddTicks(2264),
                             Details = "A serene place",
                             ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDjXn-TtvGB3NfsqMcyyh7aPamXfhgtBxWc4NeyO_&s",
                             Name = "Royal Villa",
@@ -80,7 +105,7 @@ namespace MagicVillaVillaAPI.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 6, 14, 15, 52, 36, 641, DateTimeKind.Local).AddTicks(631),
+                            CreatedDate = new DateTime(2023, 6, 21, 14, 45, 23, 671, DateTimeKind.Local).AddTicks(2277),
                             Details = "A serene place",
                             ImageUrl = "https://www.engelvoelkers.com/images/07e43544-9e5f-4571-ae73-7170dc2d6809/modern-villa-project-with-innovative-concept",
                             Name = "Diamond Villa",
@@ -93,7 +118,7 @@ namespace MagicVillaVillaAPI.Migrations
                         {
                             Id = 3,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 6, 14, 15, 52, 36, 641, DateTimeKind.Local).AddTicks(632),
+                            CreatedDate = new DateTime(2023, 6, 21, 14, 45, 23, 671, DateTimeKind.Local).AddTicks(2279),
                             Details = "A serene place",
                             ImageUrl = "https://media.gettyimages.com/id/1283532082/photo/luxurious-beautiful-modern-villa-with-front-yard-garden-at-sunset.jpg?s=612x612&w=gi&k=20&c=8D3LTUjwmcCxXLDdFkZeCo-VOh9nVy4j1qBB1hdEihU=",
                             Name = "Silver Villa",
@@ -106,7 +131,7 @@ namespace MagicVillaVillaAPI.Migrations
                         {
                             Id = 4,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 6, 14, 15, 52, 36, 641, DateTimeKind.Local).AddTicks(634),
+                            CreatedDate = new DateTime(2023, 6, 21, 14, 45, 23, 671, DateTimeKind.Local).AddTicks(2280),
                             Details = "A serene place",
                             ImageUrl = "https://assets-news.housing.com/news/wp-content/uploads/2022/02/27121904/featured-compressed-67.jpg",
                             Name = "Gold Villa",
@@ -119,7 +144,7 @@ namespace MagicVillaVillaAPI.Migrations
                         {
                             Id = 5,
                             Amenity = "",
-                            CreatedDate = new DateTime(2023, 6, 14, 15, 52, 36, 641, DateTimeKind.Local).AddTicks(635),
+                            CreatedDate = new DateTime(2023, 6, 21, 14, 45, 23, 671, DateTimeKind.Local).AddTicks(2282),
                             Details = "A serene place",
                             ImageUrl = "https://do84cgvgcm805.cloudfront.net/article/883/1200/12628bf5cf237d65658468c91ada6d7c397e4500483787773bce05857c4bd60e.jpg",
                             Name = "Diamond Pool Villa",

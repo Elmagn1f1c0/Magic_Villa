@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PlKW5DIAuyLlWIxz8xGkM+niGtEgpS777uWWgfcNzX/jcRWwUsyKPXQlBiiYWrW0yrJpiRAnSg6WLWpiH6hknA==",
+  "dgSpecHash": "eTfxvubh26CelQLQYw7oRy5pgy4mZVbGZCrzDMoHfDjmMX6dba98pTNLw5HHmy05NnygnBUWnF09er1uj8eoUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\Desktop\\MagicVilla - Copy\\MagicVilla_VillaAPI\\MagicVilla_VillaAPI.csproj",
   "expectedPackageFiles": [
@@ -9,8 +9,11 @@
     "C:\\Users\\hp\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.7\\microsoft.aspnetcore.authentication.jwtbearer.7.0.7.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.0-preview.5.22303.8\\microsoft.aspnetcore.jsonpatch.7.0.0-preview.5.22303.8.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.0-preview.5.22303.8\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.0-preview.5.22303.8.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
