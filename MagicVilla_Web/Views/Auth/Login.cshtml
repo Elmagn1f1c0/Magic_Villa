@@ -1,5 +1,4 @@
-﻿@model MagicVilla_Web.Models.DTO.LoginRequestDTO
-
+﻿@model MagicVilla_Web.Models.Dto.LoginRequestDTO
 
 
 <form method="post">
@@ -12,10 +11,12 @@
         </div>
         <div class="row">
             <div class="col-6 offset-3 pb-2">
-                <input asp-for="UserName" type="text" class="form-control" placeholder="Username" />
+                <input asp-for="UserName" type="text" class="form-control" placeholder="Username..." />
             </div>
+            
             <div class="col-6 offset-3 pb-2">
-                <input asp-for="Password" type="text" class="form-control" placeholder="Password" />
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password..." id="passwordField" />
+                <span class="password-toggle-icon" onclick="togglePasswordVisibility()"></span>
             </div>
             <div class="col-6 offset-3 pb-2">
                 <button type="submit" class="form-control btn-success" value="Submit">Login</button>
@@ -26,4 +27,14 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("passwordField");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
 }

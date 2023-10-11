@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MagicVilla_Web.Models.DTO
+namespace MagicVilla_Web.Models.Dto
 {
     public class VillaNumberUpdateDTO
     {
@@ -8,10 +8,6 @@ namespace MagicVilla_Web.Models.DTO
         public int VillaNo { get; set; }
         [Required]
         public int VillaID { get; set; }
-
-
         public string SpecialDetails { get; set; }
-
-
     }
 }

@@ -1,11 +1,13 @@
 ﻿using MagicVilla_Utility;
 using MagicVilla_Web.Models;
-using MagicVilla_Web.Models.DTO;
+using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace MagicVilla_Web.Controllers
@@ -13,17 +15,18 @@ namespace MagicVilla_Web.Controllers
     public class AuthController : Controller
     {
         private readonly IAuthService _authService;
-
-        public AuthController(IAuthService authService)
+        private readonly ITokenProvider _tokenProvider;
+        public AuthController(IAuthService authService, ITokenProvider tokenProvider)
         {
             _authService = authService;
+            _tokenProvider = tokenProvider;
         }
 
         [HttpGet]
         public IActionResult Login()
         {
             LoginRequestDTO obj = new();
-            return View();
+            return View(obj);
         }
 
         [HttpPost]
@@ -31,19 +34,22 @@ namespace MagicVilla_Web.Controllers
         public async Task<IActionResult> Login(LoginRequestDTO obj)
         {
             APIResponse response = await _authService.LoginAsync<APIResponse>(obj);
-            if(response != null && response.IsSuccess)
-            {
-                LoginResponseDTO model = JsonConvert.DeserializeObject<LoginResponseDTO>(Convert.ToString(response.Result));
+            if (response != null && response.IsSuccess)
+            { 
+                TokenDTO model = JsonConvert.DeserializeObject<TokenDTO>(Convert.ToString(response.Result));
+
+                var handler = new JwtSecurityTokenHandler();
+                var jwt = handler.ReadJwtToken(model.AccessToken);
 
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                identity.AddClaim(new Claim(ClaimTypes.Name, model.User.UserName));
-                identity.AddClaim(new Claim(ClaimTypes.Role, model.User.Role));
+                identity.AddClaim(new Claim(ClaimTypes.Name, jwt.Claims.FirstOrDefault(u => u.Type == "unique_name").Value));
+                identity.AddClaim(new Claim(ClaimTypes.Role, jwt.Claims.FirstOrDefault(u=>u.Type=="role").Value));
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
 
-                HttpContext.Session.SetString(SD.SessionToken, model.Token);
-                return RedirectToAction("Index", "Home");
+                _tokenProvider.SetToken(model);
+                return RedirectToAction("Index","Home");
             }
             else
             {
@@ -52,35 +58,51 @@ namespace MagicVilla_Web.Controllers
             }
         }
 
-
         [HttpGet]
         public IActionResult Register()
         {
-            RegistrationRequestDTO obj = new();
+            var roleList = new List<SelectListItem>()
+            {
+                  new SelectListItem{Text=SD.Admin,Value=SD.Admin},
+                new SelectListItem{Text=SD.Customer,Value=SD.Customer},
+            };
+            ViewBag.RoleList = roleList;
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegistrationRequestDTO obj)
+        public async Task<IActionResult> Register(RegisterationRequestDTO obj)
         {
-            APIResponse result = await _authService.RegisterAsync<APIResponse>(obj);
+            if (string.IsNullOrEmpty(obj.Role))
+            {
+                obj.Role = SD.Customer;
+            }
+            APIResponse result =  await _authService.RegisterAsync<APIResponse>(obj);
             if (result != null && result.IsSuccess)
             {
                 return RedirectToAction("Login");
             }
+            var roleList = new List<SelectListItem>()
+            {
+                new SelectListItem{Text=SD.Admin,Value=SD.Admin},
+                new SelectListItem{Text=SD.Customer,Value=SD.Customer},
+            };
+            ViewBag.RoleList = roleList;
             return View();
         }
 
-        [HttpGet]
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            HttpContext.Session.SetString(SD.SessionToken, "");
-            return RedirectToAction("Index", "Home");
+            var token = _tokenProvider.GetToken();
+            await _authService.LogoutAsync<APIResponse>(token);
+                _tokenProvider.ClearToken();
+            return RedirectToAction("Index","Home");
         }
 
-        [HttpGet]
         public IActionResult AccessDenied()
         {
             return View();
