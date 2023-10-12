@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj": {}
+    "C:\\Users\\hp\\Downloads\\Assignments\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj": {
+    "C:\\Users\\hp\\Downloads\\Assignments\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Downloads\\Assignments\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
         "projectName": "MagicVilla_Utility",
-        "projectPath": "C:\\Users\\hp\\Desktop\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
+        "projectPath": "C:\\Users\\hp\\Downloads\\Assignments\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\MagicVilla_Utility.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Downloads\\Assignments\\MagicVilla\\MagicVilla_VillaAPI\\MagicVilla_Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

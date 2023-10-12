@@ -14,6 +14,7 @@ using System.Data;
 
 namespace MagicVilla_Web.Controllers
 {
+    [Authorize]
     public class VillaNumberController : Controller
     {
         private readonly IVillaNumberService _villaNumberService;

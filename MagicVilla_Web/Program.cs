@@ -35,6 +35,7 @@ namespace MagicVilla_Web
                               options.LoginPath = "/Auth/Login";
                               options.AccessDeniedPath = "/Auth/AccessDenied";
                               options.SlidingExpiration = true;
+                             
                           });
             builder.Services.AddSession(options =>
             {

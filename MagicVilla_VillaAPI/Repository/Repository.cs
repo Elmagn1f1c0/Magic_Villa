@@ -61,9 +61,7 @@ namespace MagicVilla_VillaAPI.Repository
                 {
                     pageSize = 100;
                 }
-                //skip0.take(5)
-                //page number- 2     || page size -5
-                //skip(5*(1)) take(5)
+                
                 query = query.Skip(pageSize * (pageNumber - 1)).Take(pageSize);
             }
             if (includeProperties != null)

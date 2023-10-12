@@ -11,6 +11,7 @@ using System.Reflection;
 
 namespace MagicVilla_Web.Controllers
 {
+    [Authorize]
     public class VillaController : Controller
     {
         private readonly IVillaService _villaService;
@@ -32,6 +33,7 @@ namespace MagicVilla_Web.Controllers
             }
             return View(list);
         }
+        
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> CreateVilla()
         {
@@ -92,7 +94,8 @@ namespace MagicVilla_Web.Controllers
             {
                 VillaDTO model = JsonConvert.DeserializeObject<VillaDTO>(Convert.ToString(response.Result));
                 return View(model);
-            }
+			
+			}
             return NotFound();
         }
         [Authorize(Roles = "admin")]
